@@ -1441,7 +1441,7 @@ cdef class FontFuncs:
                                     Font,
                                     int,  # gid
                                     object,  # user_data
-                                ], (int, int, int)],  # success, v_origin_x, v_origin_y
+                                ], Tuple[int, int, int]],  # success, v_origin_x, v_origin_y
                                 user_data: object = None):
         """Sets the implementation function for the vertical-glyph-origin
         callback. The callback must return a ``(success, x, y)`` tuple.
