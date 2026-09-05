@@ -227,7 +227,22 @@ def _generate_field_docs() -> None:
         f.write(content)
 
 
+def _generate_type_annotations() -> None:
+    from stubgen_pyx import StubgenPyx
+
+    stubgen = StubgenPyx()
+    results = stubgen.convert_glob("**/*.pyx")
+    for result in results:
+        if result.success:
+            print(f"Generated: {result.pyi_file}")
+        else:
+            print(f"Failed: {result.pyx_file}")
+            print(f"  Error: {result.error}")
+
+
+
 _generate_field_docs()
+_generate_type_annotations()
 
 
 setup(
