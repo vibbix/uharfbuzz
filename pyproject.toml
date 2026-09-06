@@ -9,11 +9,6 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
-[project]
-name = "uharfbuzz"
-requires-python = ">= 3.10"
-dynamic = ["version", "readme", "license", "authors", "description"]
-
 [tool.setuptools_scm]
 
 [tool.cibuildwheel]
