@@ -231,7 +231,7 @@ def _generate_type_annotations() -> None:
     from stubgen_pyx import StubgenPyx
 
     stubgen = StubgenPyx()
-    results = stubgen.convert_glob("**/*.pyx")
+    results = stubgen.convert_glob("**/*.pyx", exclude_patterns="*/_harfbuzz_test.pyx")
     for result in results:
         if result.success:
             print(f"Generated: {result.pyi_file}")
